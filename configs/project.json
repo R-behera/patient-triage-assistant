@@ -1,0 +1,46 @@
+{
+  "slug": "patient-triage-assistant",
+  "title": "Patient Triage Assistant",
+  "project_type": "llm",
+  "domain": "HealthTech",
+  "summary": "Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.",
+  "tags": [
+    "triage",
+    "health",
+    "assistant"
+  ],
+  "accent": "#3d5a80",
+  "dashboard_metrics": [
+    {
+      "label": "Resolution Rate",
+      "value": "61%",
+      "delta": "+5.8%"
+    },
+    {
+      "label": "Answer Quality",
+      "value": "93%",
+      "delta": "+2.2%"
+    },
+    {
+      "label": "Ops Time Saved",
+      "value": "13h",
+      "delta": "+3h"
+    }
+  ],
+  "sample_features": {
+    "query": "Summarize the highest priority risk and recommended next step.",
+    "audience": "leadership"
+  },
+  "sample_metrics": {
+    "acquisition": 35.3,
+    "activation": 36.5,
+    "retention": 49.6,
+    "revenue": 78.1
+  },
+  "knowledge_base": [
+    "Patient Triage Assistant is positioned as a HealthTech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on triage, health, assistant."
+  ]
+}
