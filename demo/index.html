@@ -6,13 +6,12 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Patient Triage Assistant</title>
           <link rel="stylesheet" href="./styles.css">
-          <style>:root { --accent: #3d5a80; }</style>
         </head>
-        <body>
-          <div class="page">
+        <body class="surface-mist">
+          <div class="page layout-horizon eyebrow-soft headline-compact modules-3 hero-align-center">
             <section class="hero">
               <div class="panel hero-copy">
-                <span class="eyebrow">LLM Workflow App</span>
+                <span class="eyebrow" data-health>Signal Watchtower</span>
                 <h1 id="project-title">Patient Triage Assistant</h1>
                 <p id="project-summary" class="lead">Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.</p>
                 <ul id="project-tags" class="tag-list">
@@ -26,55 +25,84 @@
 <article class='card'><span>Ops Time Saved</span><strong>13h</strong><em>+3h</em></article>
                 </div>
                 <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>HealthTech</strong></article><article class='mini-card'><span>Interface</span><strong>FastAPI + Browser UI</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>HealthTech</strong></article><article class='mini-card'><span>Application</span><strong>Signal Watchtower</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
                 </div>
               </div>
             </section>
             <section class="app-grid">
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 01</span>
-                  <h2>Workflow Inputs</h2>
-                  <p>Simulate the model-side classification or prioritization decision from input features.</p>
-                </div>
-                <textarea id="score-input"></textarea>
-                <div class="button-row">
-                  <button id="run-score">Run Scoring</button>
-                  <button id="load-defaults" class="secondary" type="button">Reload Defaults</button>
-                </div>
-                <pre id="score-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 02</span>
-                  <h2>Quality Review</h2>
-                  <p>Compare workflow metrics and summarize the largest operational change.</p>
-                </div>
-                <textarea id="analyze-input"></textarea>
-                <div class="button-row">
-                  <button id="run-analyze">Run Analysis</button>
-                </div>
-                <pre id="analyze-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 03</span>
-                  <h2>Copilot Prompt</h2>
-                  <p>Ask a grounded question and inspect the supporting context used in the answer.</p>
-                </div>
-                <textarea id="query-input" class="query-input"></textarea>
-                <div class="button-row">
-                  <button id="run-query">Run Query</button>
-                </div>
-                <pre id="query-output"></pre>
-              </article>
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 01</span>
+            <h2>Incident Prioritizer</h2>
+            <p>Simulate how incoming events are scored before they hit an operator queue.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;leadership&quot;
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Prioritize</button>
+          </div>
+          <pre class="js-output">Risk band and top signals will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 02</span>
+            <h2>Alert Delta Review</h2>
+            <p>Compare current operating metrics with a baseline to explain what changed.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 35.3,
+    &quot;activation&quot;: 36.5,
+    &quot;retention&quot;: 49.6,
+    &quot;revenue&quot;: 78.1
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 32.48,
+    &quot;activation&quot;: 33.58,
+    &quot;retention&quot;: 45.63,
+    &quot;revenue&quot;: 71.85
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Compare Signals</button>
+          </div>
+          <pre class="js-output">Operational movement summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Signal 03</span>
+            <h2>Triage Playbook</h2>
+            <p>Generate an action-oriented response plan for the next incident handling step.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for Patient Triage Assistant.&quot;,
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;leadership&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 35.3,
+    &quot;activation&quot;: 36.5,
+    &quot;retention&quot;: 49.6,
+    &quot;revenue&quot;: 78.1
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Build Playbook</button>
+          </div>
+          <pre class="js-output">Suggested next actions and rationale will appear here.</pre>
+        </article>
             </section>
             <footer class="footer">
-              <span>Data Science + AI + LLM + RAG Portfolio</span>
+              <span>HealthTech • LLM • Signal Watchtower</span>
               <span>patient-triage-assistant</span>
             </footer>
           </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "patient-triage-assistant", "title": "Patient Triage Assistant", "project_type": "llm", "domain": "HealthTech", "summary": "Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.", "tags": ["triage", "health", "assistant"]}, "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "leadership"}, "sample_metrics": {"acquisition": 35.3, "activation": 36.5, "retention": 49.6, "revenue": 78.1}, "sample_query": "What is the top priority recommendation?", "knowledge_base": ["Patient Triage Assistant is positioned as a HealthTech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on triage, health, assistant."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "61%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "93%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "13h", "delta": "+3h"}]}</script>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "patient-triage-assistant", "title": "Patient Triage Assistant", "project_type": "llm", "domain": "HealthTech", "summary": "Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.", "tags": ["triage", "health", "assistant"]}, "app_archetype": "watchtower", "ui_profile": {"layout": "horizon", "surface": "mist", "font_stack": "\"IBM Plex Sans\", \"Segoe UI\", sans-serif", "radius": 20, "shadow": 46, "eyebrow_style": "soft", "module_columns": 3, "hero_align": "center", "headline_mode": "compact"}, "app_modules": [{"label": "Signal 01", "title": "Incident Prioritizer", "description": "Simulate how incoming events are scored before they hit an operator queue.", "endpoint": "/score", "input_mode": "json", "cta": "Prioritize", "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  }\n}", "hint": "Risk band and top signals will appear here.", "span": "normal"}, {"label": "Signal 02", "title": "Alert Delta Review", "description": "Compare current operating metrics with a baseline to explain what changed.", "endpoint": "/analyze", "input_mode": "json", "cta": "Compare Signals", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 35.3,\n    \"activation\": 36.5,\n    \"retention\": 49.6,\n    \"revenue\": 78.1\n  },\n  \"baseline\": {\n    \"acquisition\": 32.48,\n    \"activation\": 33.58,\n    \"retention\": 45.63,\n    \"revenue\": 71.85\n  }\n}", "hint": "Operational movement summary will appear here.", "span": "normal"}, {"label": "Signal 03", "title": "Triage Playbook", "description": "Generate an action-oriented response plan for the next incident handling step.", "endpoint": "/recommend", "input_mode": "json", "cta": "Build Playbook", "prefill": "{\n  \"prompt\": \"Recommend the next best action for Patient Triage Assistant.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  },\n  \"metrics\": {\n    \"acquisition\": 35.3,\n    \"activation\": 36.5,\n    \"retention\": 49.6,\n    \"revenue\": 78.1\n  }\n}", "hint": "Suggested next actions and rationale will appear here.", "span": "wide"}], "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "leadership"}, "sample_metrics": {"acquisition": 35.3, "activation": 36.5, "retention": 49.6, "revenue": 78.1}, "knowledge_base": ["Patient Triage Assistant is positioned as a HealthTech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on triage, health, assistant."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "61%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "93%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "13h", "delta": "+3h"}]}</script>
           <script src="./app.js"></script>
         </body>
         </html>

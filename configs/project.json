@@ -9,7 +9,8 @@
     "health",
     "assistant"
   ],
-  "accent": "#3d5a80",
+  "accent": "#2c2cc8",
+  "secondary_accent": "#882ca9",
   "dashboard_metrics": [
     {
       "label": "Resolution Rate",
@@ -42,5 +43,52 @@
     "The primary value proposition is: Structure intake notes into triage-ready summaries, escalation flags, and care handoff context.",
     "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
     "Typical stakeholders include analytics, operations, product, and leadership teams working on triage, health, assistant."
+  ],
+  "app_archetype": "watchtower",
+  "ui_profile": {
+    "layout": "horizon",
+    "surface": "mist",
+    "font_stack": "\"IBM Plex Sans\", \"Segoe UI\", sans-serif",
+    "radius": 20,
+    "shadow": 46,
+    "eyebrow_style": "soft",
+    "module_columns": 3,
+    "hero_align": "center",
+    "headline_mode": "compact"
+  },
+  "app_modules": [
+    {
+      "label": "Signal 01",
+      "title": "Incident Prioritizer",
+      "description": "Simulate how incoming events are scored before they hit an operator queue.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Prioritize",
+      "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  }\n}",
+      "hint": "Risk band and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 02",
+      "title": "Alert Delta Review",
+      "description": "Compare current operating metrics with a baseline to explain what changed.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Compare Signals",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 35.3,\n    \"activation\": 36.5,\n    \"retention\": 49.6,\n    \"revenue\": 78.1\n  },\n  \"baseline\": {\n    \"acquisition\": 32.48,\n    \"activation\": 33.58,\n    \"retention\": 45.63,\n    \"revenue\": 71.85\n  }\n}",
+      "hint": "Operational movement summary will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 03",
+      "title": "Triage Playbook",
+      "description": "Generate an action-oriented response plan for the next incident handling step.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Build Playbook",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for Patient Triage Assistant.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  },\n  \"metrics\": {\n    \"acquisition\": 35.3,\n    \"activation\": 36.5,\n    \"retention\": 49.6,\n    \"revenue\": 78.1\n  }\n}",
+      "hint": "Suggested next actions and rationale will appear here.",
+      "span": "wide"
+    }
   ]
 }
